@@ -232,3 +232,9 @@ html {
   color: #b00020;
   font-weight: bold;
 }
+
+.form-summary {
+  width: 100%;
+  color: var(--green);
+  font-weight: bold;
+}

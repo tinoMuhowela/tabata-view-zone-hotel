@@ -39,9 +39,17 @@ checkIn.addEventListener("change", function () {
 });
 
 const stayError = document.querySelector("#stay-error");
+const staySummary = document.querySelector("#stay-summary");
 
+function nightsBetween(start, end) {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const msPerDay = 1000 * 60 * 60 * 24;
+  return Math.round((endDate - startDate) / msPerDay);
+}
 stayForm.addEventListener("submit", function (event) {
   event.preventDefault();
+  staySummary.textContent = "";                       // new
 
   if (checkIn.value === "" || checkOut.value === "") {
     stayError.textContent = "Please choose both check-in and check-out dates.";
@@ -54,6 +62,10 @@ stayForm.addEventListener("submit", function (event) {
   }
 
   stayError.textContent = "";
+
+  const nights = nightsBetween(checkIn.value, checkOut.value);       // new
+  staySummary.textContent =                                          // new
+    "Your stay: " + nights + (nights === 1 ? " night" : " nights");  // new
 });
 
 const eventError = document.querySelector("#event-error");
