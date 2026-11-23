@@ -238,3 +238,47 @@ html {
   color: var(--green);
   font-weight: bold;
 }
+
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.room-card {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-image {
+  height: 180px;
+  background-color: var(--green);
+  background-size: cover;
+  background-position: center;
+}
+
+.room-info {
+  padding: 20px;
+}
+
+.room-info h3 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.room-info p {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.room-info .room-price {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.room-info .room-price span {
+  font-weight: normal;
+  font-size: 13px;
+}
