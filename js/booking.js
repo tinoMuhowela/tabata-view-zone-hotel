@@ -55,3 +55,24 @@ stayForm.addEventListener("submit", function (event) {
 
   stayError.textContent = "";
 });
+
+const eventError = document.querySelector("#event-error");
+const eventGuests = document.querySelector("#event-guests");
+
+eventForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (eventDate.value === "") {
+    eventError.textContent = "Please choose the date of your event.";
+    return;
+  }
+
+  const guests = Number(eventGuests.value);
+
+  if (guests < 10 || guests > 500) {
+    eventError.textContent = "We host events for 10 to 500 guests.";
+    return;
+  }
+
+  eventError.textContent = "";
+});

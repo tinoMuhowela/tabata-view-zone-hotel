@@ -43,7 +43,7 @@
       <button type="submit" class="btn">Continue</button>
     </form>
 
-    <form class="book-form hidden" id="event-form">
+     <form class="book-form hidden" id="event-form">
       <label>Event type
         <select id="event-type">
           <option value="conference">Conference</option>
@@ -56,8 +56,9 @@
         <input type="date" id="event-date">
       </label>
       <label>Guests
-        <input type="number" id="event-guests" min="10" value="50">
+        <input type="number" id="event-guests" min="10" max="500" value="50">
       </label>
+      <p class="form-error" id="event-error"></p>
       <button type="submit" class="btn">Continue</button>
     </form>
   </main>
